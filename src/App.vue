@@ -2,6 +2,7 @@
   <div id="app">
     <ProfileHeader></ProfileHeader>
     <ProfileContent v-bind:items="projectItems"/>
+    <ProfileDetail v-bind:items="projectItems"/>
   </div>
 </template>
 

@@ -6,22 +6,29 @@
 
           <div class="modal-header">
             <slot name="header">
-              default header
+              <!-- 인스타 헤더 마컵 넣기 -->
+              <!-- 프로필사진, 아이디, X(닫기) -->
+              <button class="modal-default-button" @click="$emit('close')">
+                닫기
+              </button>
+            </slot>
+            <slot name="header-img">
+              <img src="../assets/imgs/profile.gif" alt="" class="modal-header-img">
             </slot>
           </div>
 
           <div class="modal-body">
-            <slot name="body">
-
-            </slot>
+            <slot name="body"></slot>
+              <!-- 인스타 바디 마컵 넣기 -->
+              <!-- 사진만 -->
+              default body
+              <div slot="gallery-img"></div>
+            
           </div>
 
           <div class="modal-footer">
             <slot name="footer">
               default footer
-              <button class="modal-default-button" @click="$emit('close')">
-                OK
-              </button>
             </slot>
           </div>
         </div>
@@ -37,6 +44,11 @@ export default{
 </script>
 
 <style>
+.modal-header-img {
+  width: 30%;
+  height: 30%;
+}
+
 .modal-mask {
   position: fixed;
   z-index: 9998;
