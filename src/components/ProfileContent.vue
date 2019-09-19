@@ -9,12 +9,12 @@
               <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> {{ item.description }}</li>
             </ul>
           </div>
-          <button type="button" @click="imgClick">{{ index }}</button>
+          <button type="button" @click="imgClick(index)" :class="`img-index--${index}`">btton-{{ index }}</button>
         </div>
       </div>
       <ProfileDetail v-if="showModal" @close="showModal = false">
         <div slot="body" v-for="(item, index) in items" :key="index" class="gallery-item">
-          <img :src="item.thumbnail" class="gallery-image-2"/>
+          <img :src="item.thumbnail" class="gallery-image-2" :class="`img-index--${index}`"/>
         </div>
         <h3 slot="body">body바꾸기</h3>
         <h3 slot="footer">footer바꾸기</h3>
@@ -36,7 +36,7 @@ export default {
     }
   },
   methods: {
-    imgClick() {
+    imgClick(index) {
       this.showModal = !this.showModal;
     }
   },
