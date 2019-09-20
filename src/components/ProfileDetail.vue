@@ -2,35 +2,29 @@
   <transition name="modal">
     <div class="modal-mask">
       <div class="modal-wrapper">
-        <div class="modal-container">
-
-          <div class="modal-header">
-            <slot name="header">
-              <!-- 인스타 헤더 마컵 넣기 -->
-              <!-- 프로필사진, 아이디, X(닫기) -->
-              <button class="modal-default-button" @click="$emit('close')">
-                닫기
-              </button>
-            </slot>
-            <slot name="header-img">
-              <img src="../assets/imgs/profile.gif" alt="" class="modal-header-img">
-            </slot>
-          </div>
-
-          <div class="modal-body">
-            <slot name="body"></slot>
-              <!-- 인스타 바디 마컵 넣기 -->
-              <!-- 사진만 -->
-              default body
-              <div slot="gallery-img"></div>
-            
-          </div>
-
-          <div class="modal-footer">
-            <slot name="footer">
-              default footer
-            </slot>
-          </div>
+        <div class="app__phone">
+          <div class="feed">
+            <div class="instagram-post">
+              <div class="header level">
+                <div class="level-left">
+                  <img src="../assets/imgs/profile.gif" class="modal-header-img"/>
+                  <div class="user">
+                    <span class="username">soeun.b</span>
+                    <button class="modal-default-button" @click="$emit('close')">
+                      ✖
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <slot name="modal-img"></slot>
+              <div class="content">
+                <div class="content-title">
+                  <slot name="modal-tit"></slot>
+                </div>
+                <p class="caption"><span>soeun.b</span>&nbsp;<slot name="modal-des"></slot></p>
+              </div>
+            </div>
+          </div> 
         </div>
       </div>
     </div>
@@ -44,9 +38,13 @@ export default{
 </script>
 
 <style>
-.modal-header-img {
-  width: 30%;
-  height: 30%;
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #4a4a4a;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .modal-mask {
@@ -66,41 +64,106 @@ export default{
   vertical-align: middle;
 }
 
-.modal-container {
-  width: 300px;
+.app__phone {
+  background-color: white;
+  height: 620px;
+  width: 375px;
+  overflow: hidden;
   margin: 0px auto;
-  padding: 20px 30px;
-  background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
   font-family: Helvetica, Arial, sans-serif;
 }
 
-.modal-header h3 {
-  margin-top: 0;
-  color: #42b983;
+.feed {
+  height: 100%;
+  overflow: hidden;
+  margin-right: -15px;
 }
 
-.modal-body {
-  margin: 20px 0;
+.instagram-post {
+  padding-top: 50px;
+  padding: 5px 0;
+}
+
+.instagram-post .header {
+  height: 40px;
+  border-bottom: 1px solid #fff;
+  margin: 7.5px 10px;
+}
+
+.instagram-post .header .modal-header-img {
+  /*display: inline-block;*/
+  width: 10%;
+  height: 10%;
+  border-radius: 99px;
+  float: left;
+}
+
+.user {
+  float: left;
+  padding-top: 7px;
+}
+
+.instagram-post .username {
+  padding-left: 7px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #262626;
+  width: 33%;
 }
 
 .modal-default-button {
-  float: right;
+  margin-left: 228px;
+  background-color: transparent;
+  background-image: none;
+  border-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.modal-enter {
-  opacity: 0;
+.instagram-post .image-container {
+  height: 300px;
+  margin-left: 38px;
 }
 
-.modal-leave-active {
-  opacity: 0;
+.instagram-post .content {
+  margin: 7.5px 10px;
+  color: #4a4a4a;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+.instagram-post .content-title {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.instagram-post .likes {
+  margin: 5px 0;
+  margin-bottom: 5px !important;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.instagram-post .caption {
+  font-size: 14px;
+}
+
+.instagram-post .caption span {
+    font-weight: bold;
+}
+
+.instagram-post:last-child {
+  margin-bottom: 80px;
+}
+
+.selected-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 330px;
 }
 </style>

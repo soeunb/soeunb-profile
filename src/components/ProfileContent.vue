@@ -7,16 +7,16 @@
             <img :src="item.thumbnail" class="gallery-image"/>
             <div class="gallery-item-info">
               <ul>
-                <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> {{ item.description }}</li>
+                <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> {{ item.period }}</li>
               </ul>
             </div>
           </div>
           <ProfileDetail v-if="item.show" @close="item.show = false">
-            <div slot="body">
-              <img :src="item.thumbnail" class="gallery-image-2" :class="`img-index--${index}`"/>
+            <div slot="modal-img">
+              <img :src="item.thumbnail" class="image-container" :class="`img-index--${index}`"/>
             </div>
-            <h3 slot="body">body바꾸기</h3>
-            <h3 slot="footer">footer바꾸기</h3>
+            <div slot="modal-tit"><img src="../assets/imgs/heart.png" class="heart" />&nbsp;<span class="modal-title">{{ item.title }}</span></div>
+            <div slot="modal-des">{{ item.description }}</div>
           </ProfileDetail>
         </div>
       </div>
@@ -105,5 +105,12 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.heart {
+  cursor: pointer;
+  width: 7%;
+  height: 7%;
+  float: left;
 }
 </style>
