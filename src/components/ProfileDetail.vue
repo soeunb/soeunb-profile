@@ -21,7 +21,7 @@
                 <div class="content-title">
                   <slot name="modal-tit"></slot>
                 </div>
-                <p class="caption"><span>soeun.b</span>&nbsp;<slot name="modal-des"></slot></p>
+                <p class="caption"><span class="username">soeun.b</span>&nbsp;<slot name="modal-des"></slot></p>
               </div>
             </div>
           </div> 
@@ -67,7 +67,7 @@ body {
 .app__phone {
   background-color: white;
   height: 620px;
-  width: 375px;
+  width: 350px;
   overflow: hidden;
   margin: 0px auto;
   border-radius: 2px;
@@ -79,7 +79,7 @@ body {
 .feed {
   height: 100%;
   overflow: hidden;
-  margin-right: -15px;
+  margin-right: -5px;
 }
 
 .instagram-post {
@@ -106,16 +106,18 @@ body {
   padding-top: 7px;
 }
 
-.instagram-post .username {
+.instagram-post .user {
   padding-left: 7px;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
   color: #262626;
-  width: 33%;
+}
+
+.username {
+  font-weight: bold;
 }
 
 .modal-default-button {
-  margin-left: 228px;
+  margin-left: 215px;
   background-color: transparent;
   background-image: none;
   border-color: transparent;
@@ -124,8 +126,7 @@ body {
 }
 
 .instagram-post .image-container {
-  height: 300px;
-  margin-left: 38px;
+  height: 350px;
 }
 
 .instagram-post .content {
@@ -137,23 +138,14 @@ body {
 }
 
 .instagram-post .content-title {
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.instagram-post .likes {
-  margin: 5px 0;
-  margin-bottom: 5px !important;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 }
 
 .instagram-post .caption {
   font-size: 14px;
-}
-
-.instagram-post .caption span {
-    font-weight: bold;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
 .instagram-post:last-child {

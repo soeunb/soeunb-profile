@@ -15,8 +15,7 @@
             <div slot="modal-img">
               <img :src="item.thumbnail" class="image-container" :class="`img-index--${index}`"/>
             </div>
-            <div slot="modal-tit"><img src="../assets/imgs/heart.png" class="heart" />&nbsp;<span class="modal-title">{{ item.title }}</span></div>
-            <div slot="modal-des">{{ item.description }}</div>
+            <span slot="modal-tit"><img src="../assets/imgs/heart.png" class="heart" />&nbsp;{{ item.title }}</span><span slot="modal-des">{{ item.description }}</span>
           </ProfileDetail>
         </div>
       </div>
@@ -60,57 +59,57 @@ export default {
   height: 30%;
 }
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -1rem -1rem;
-    padding-bottom: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1rem -1rem;
+  padding-bottom: 3rem;
 }
 
 .gallery-item {
-    position: relative;
-    flex: 1 0 22rem;
-    margin: 1rem;
-    color: #fff;
-    cursor: pointer;
+  position: relative;
+  flex: 1 0 22rem;
+  margin: 1rem;
+  color: #fff;
+  cursor: pointer;
 }
 
 .gallery-item:hover .gallery-item-info,
 .gallery-item:focus .gallery-item-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .gallery-item-info {
-    display: none;
+  display: none;
 }
 
 .gallery-item-info li {
-    display: inline-block;
-    font-size: 1.7rem;
-    font-weight: 600;
+  display: inline-block;
+  font-size: 1.7rem;
+  font-weight: 600;
 }
 
 .fa-clone,
 .fa-comment {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .gallery-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .heart {
   cursor: pointer;
-  width: 7%;
-  height: 7%;
+  width: 5%;
+  height: 5%;
   float: left;
 }
 </style>
