@@ -5,7 +5,7 @@
         <div class="app__phone">
           <div class="feed">
             <div class="instagram-post">
-              <div class="header level">
+              <div class="header headroom">
                 <div class="level-left">
                   <img src="../assets/imgs/profile.gif" class="modal-header-img"/>
                   <div class="user">
@@ -68,18 +68,19 @@ body {
   background-color: white;
   height: 620px;
   width: 350px;
-  overflow: hidden;
   margin: 0px auto;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
   font-family: Helvetica, Arial, sans-serif;
+  overflow: hidden;
 }
 
 .feed {
   height: 100%;
-  overflow: hidden;
-  margin-right: -5px;
+  margin-right: -17px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .instagram-post {
@@ -117,7 +118,7 @@ body {
 }
 
 .modal-default-button {
-  margin-left: 215px;
+  margin-left: 210px;
   background-color: transparent;
   background-image: none;
   border-color: transparent;
@@ -134,7 +135,7 @@ body {
   color: #4a4a4a;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 .instagram-post .content-title {
@@ -143,19 +144,11 @@ body {
 }
 
 .instagram-post .caption {
-  font-size: 14px;
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 5px;
 }
 
 .instagram-post:last-child {
   margin-bottom: 80px;
-}
-
-.selected-image {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: 330px;
 }
 </style>

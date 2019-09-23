@@ -6,16 +6,15 @@
           <div @click="imgClick(item)" style="cursor:pointer;">
             <img :src="item.thumbnail" class="gallery-image"/>
             <div class="gallery-item-info">
-              <ul>
-                <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> {{ item.period }}</li>
-              </ul>
+              <div class="gallery-item-comments">{{ item.period }}</div>
             </div>
           </div>
           <ProfileDetail v-if="item.show" @close="item.show = false">
             <div slot="modal-img">
               <img :src="item.thumbnail" class="image-container" :class="`img-index--${index}`"/>
             </div>
-            <span slot="modal-tit"><img src="../assets/imgs/heart.png" class="heart" />&nbsp;{{ item.title }}</span><span slot="modal-des">{{ item.description }}</span>
+            <span slot="modal-tit"><img src="../assets/imgs/heart.png" class="heart" />&nbsp;{{ item.title }}</span>
+            <span v-html="item.description" slot="modal-des"></span>
           </ProfileDetail>
         </div>
       </div>
@@ -32,7 +31,6 @@ export default {
   },
   data() {
     return {
-      //showModal: false,
       photos: {}
     }
   },
@@ -43,7 +41,6 @@ export default {
   },
   methods: {
     imgClick(item) {
-      //this.showModal = !this.showModal;
       item.show = true
     }
   },
@@ -54,10 +51,6 @@ export default {
 </script>
 
 <style scoped>
-.gallery-image-2 {
-  width: 30%;
-  height: 30%;
-}
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -89,15 +82,10 @@ export default {
   display: none;
 }
 
-.gallery-item-info li {
+.gallery-item-info .gallery-item-comments {
   display: inline-block;
   font-size: 1.7rem;
   font-weight: 600;
-}
-
-.fa-clone,
-.fa-comment {
-  transform: rotateY(180deg);
 }
 
 .gallery-image {
