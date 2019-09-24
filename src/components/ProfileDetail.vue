@@ -118,6 +118,7 @@ body {
 }
 
 .modal-default-button {
+  display: inline-block;
   margin-left: 210px;
   background-color: transparent;
   background-image: none;
