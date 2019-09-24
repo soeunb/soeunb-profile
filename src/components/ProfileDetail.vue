@@ -136,6 +136,7 @@ body {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.7;
+  word-break:normal;
 }
 
 .instagram-post .content-title {
@@ -146,5 +147,18 @@ body {
 .instagram-post .caption {
   font-size: 13px;
   margin-top: 5px;
+}
+
+.instagram-post .caption-bottom {
+  /*color:#5D5D5D;*/
+  font-size:12px;
+}
+
+/* Media Query */
+
+@media screen and (max-width: 40rem) {
+  .feed {
+    margin-right: -6px;
+  }
 }
 </style>
