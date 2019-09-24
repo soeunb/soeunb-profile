@@ -16,7 +16,8 @@
           </ul>
         </div>
         <div class="profile-bio">
-          <p>자소<br/>두줄</p>
+          <p>주로 AEM(어도비에서 개발한 CMS솔루션)을 기반으로 글로벌 기업의 사이트를<br/>구축/운영을 했습니다.&nbsp;
+              템플릿과 컴포넌트 기반으로 구축해 왔습니다. 이와 비슷한<br/>언어에 관심이 많아서 현재 Vue.js를 공부하고 있습니다.</p>
         </div>
       </div>
   </div>
@@ -92,7 +93,7 @@ export default{
 
 .profile-stats li {
     display: inline-block;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     line-height: 1.5;
     margin-right: 4rem;
 }
@@ -106,7 +107,7 @@ export default{
 }
 
 .profile-bio {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.5;
     margin-top: 2.3rem;
@@ -166,7 +167,7 @@ export default{
     }
 
     .profile-bio {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         margin-top: 1.5rem;
     }
 
@@ -190,7 +191,7 @@ export default{
     }
 
     .profile-stats li {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         flex: 1;
         margin: 0;
     }

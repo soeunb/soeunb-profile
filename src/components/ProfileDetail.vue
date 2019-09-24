@@ -1,7 +1,7 @@
 <template>
   <transition name="modal">
     <div class="modal-mask">
-      <div class="modal-wrapper">
+      <div class="modal-wrapper" @click.self="$emit('close')">
         <div class="app__phone">
           <div class="feed">
             <div class="instagram-post">
@@ -146,9 +146,5 @@ body {
 .instagram-post .caption {
   font-size: 13px;
   margin-top: 5px;
-}
-
-.instagram-post:last-child {
-  margin-bottom: 80px;
 }
 </style>
