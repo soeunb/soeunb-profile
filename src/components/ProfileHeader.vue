@@ -10,7 +10,7 @@
         </div>
         <div class="profile-stats">
           <ul>
-            <li><span class="profile-stat-count">👩🏻</span> 1992.07.31</li>
+            <li><span class="profile-stat-count">👩🏻</span> 백소은(1992)</li>
             <li><span class="profile-stat-count">📞</span> 010-9991-7624</li>
             <li><span class="profile-stat-count">📧</span> b_soeun_@naver.com</li>
           </ul>
