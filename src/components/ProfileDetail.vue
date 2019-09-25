@@ -158,8 +158,8 @@ body {
 /* Media Query */
 
 @media screen and (max-width: 40rem) {
-  .feed {
-    margin-right: -6px;
+  .instagram-post .content {
+    margin-right: 17px;
   }
 }
 </style>
