@@ -100,6 +100,10 @@ body {
   padding-bottom: 3rem;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 img {
   display: block;
 }

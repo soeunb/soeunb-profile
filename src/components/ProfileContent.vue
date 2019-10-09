@@ -1,5 +1,4 @@
-<template>
-  <main>
+<template> 
     <div class="container">
       <div class="gallery">
         <div v-for="(item, index) in photos" :key="index" class="gallery-item">
@@ -9,7 +8,7 @@
               <div class="gallery-item-comments">{{ item.period }}</div>
             </div>
           </div>
-          <ProfileDetail v-if="item.show" @close="item.show = false">
+          <ProfileDetail v-if="item.show" @close="hideModal(item)">
             <div slot="modal-img">
               <img :src="item.thumbnail" class="image-container" :class="`img-index--${index}`"/>
             </div>
@@ -19,7 +18,6 @@
         </div>
       </div>
     </div>
-  </main>
 </template>
 
 <script>
@@ -42,6 +40,11 @@ export default {
   methods: {
     imgClick(item) {
       item.show = true
+      document.body.classList.add("modal-open")
+    },
+    hideModal(item) {
+      item.show = false
+      document.body.classList.remove("modal-open")
     }
   },
   components: {
